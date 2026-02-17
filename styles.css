@@ -348,21 +348,9 @@ footer {
   position: relative;
   z-index: 1;
  }
-   .character-preview-container {
-    width: 100%;
-    margin: 15px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid #00ffff; /* Kulay ng border mo */
-    border-radius: 15px;
-    overflow: hidden;
-    background: rgba(0, 0, 0, 0.5); /* Para may background habang naglo-load */
-}
-
-.character-preview-video {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-}
+   .character-video {
+  border-radius: 10px; /* Para bumagay sa rounded corners ng UI mo */
+  max-width: 100%;
+  display: block;
+  margin: 10px 0;
+   }
