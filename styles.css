@@ -347,10 +347,13 @@ footer {
  main, header, footer {
   position: relative;
   z-index: 1;
-}
- .toji-video {
-  width: 100%;       /* Para sumunod sa lapad ng container */
-  height: auto;      /* Para hindi ma-distort ang ratio */
-  border-radius: 8px; /* Opsyonal: para bumagay sa rounded corners ng UI mo */
-  display: block;
  }
+   /* Para lang sa video sa loob ng Toji box */
+.toji-video {
+    width: 100%;       /* Para kumasya sa lapad ng box */
+    max-height: 250px; /* Adjust mo depende sa gusto mong laki */
+    object-fit: cover; /* Para hindi bansot ang video */
+    border-radius: 10px;
+    display: block;
+    margin: 10px 0;    /* Para may space sa taas at baba */
+}
