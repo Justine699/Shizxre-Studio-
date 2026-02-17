@@ -348,12 +348,21 @@ footer {
   position: relative;
   z-index: 1;
  }
-   /* Para lang sa video sa loob ng Toji box */
-.character-video {
-    width: 100%;       /* Para kumasya sa lapad ng box */
-    max-height: 250px; /* Adjust mo depende sa gusto mong laki */
-    object-fit: cover; /* Para hindi bansot ang video */
-    border-radius: 10px;
+   .character-preview-container {
+    width: 100%;
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #00ffff; /* Kulay ng border mo */
+    border-radius: 15px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.5); /* Para may background habang naglo-load */
+}
+
+.character-preview-video {
+    width: 100%;
+    height: auto;
     display: block;
-    margin: 10px 0;    /* Para may space sa taas at baba */
+    object-fit: cover;
 }
