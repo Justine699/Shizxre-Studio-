@@ -348,3 +348,9 @@ footer {
   position: relative;
   z-index: 1;
 }
+ .toji-video {
+  width: 100%;       /* Para sumunod sa lapad ng container */
+  height: auto;      /* Para hindi ma-distort ang ratio */
+  border-radius: 8px; /* Opsyonal: para bumagay sa rounded corners ng UI mo */
+  display: block;
+ }
