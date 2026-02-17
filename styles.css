@@ -349,7 +349,7 @@ footer {
   z-index: 1;
  }
    /* Para lang sa video sa loob ng Toji box */
-.toji-video {
+.character-video {
     width: 100%;       /* Para kumasya sa lapad ng box */
     max-height: 250px; /* Adjust mo depende sa gusto mong laki */
     object-fit: cover; /* Para hindi bansot ang video */
