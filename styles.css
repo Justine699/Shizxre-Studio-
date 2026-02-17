@@ -9,7 +9,7 @@
 html, body {
   height: 100%;
   font-family: 'Nunito', sans-serif;
-  background: url('videos/background.mp4') no-repeat center center fixed;
+  background-image: url('videos/background.mp4') no-repeat center center fixed;
   background-size: cover;
   color: #e0f7fa;
   overflow-x: hidden;
