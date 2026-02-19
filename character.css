@@ -222,7 +222,7 @@ footer {
   }
 
 }
- #bg-video {
+ #background-video {
   position: fixed;         /* Fixes the video on the screen */
   top: 0;                  /* Position top-left */
   left: 0;
@@ -238,3 +238,4 @@ footer {
   position: relative;
   z-index: 1;
  }
+
