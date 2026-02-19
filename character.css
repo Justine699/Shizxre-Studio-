@@ -220,4 +220,21 @@ footer {
   .character-preview {
     flex-direction: column;
   }
+
 }
+ #bg-video {
+  position: fixed;         /* Fixes the video on the screen */
+  top: 0;                  /* Position top-left */
+  left: 0;
+  width: 100vw;            /* Full viewport width */
+  height: 100vh;           /* Full viewport height */
+  object-fit: cover;       /* Cover entire area without distortion */
+  z-index: -1;             /* Behind other content */
+  
+  /* Optional for a smooth fade-in effect */
+  opacity: 0.9;
+}
+ main, header, footer {
+  position: relative;
+  z-index: 1;
+ }
