@@ -1,105 +1,254 @@
-/* --- PYROX-INSPIRED LUXURY GRID (NEW ADDITIONS) --- */
+/* Import Luxury Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@200;400;600&display=swap');
 
-/* Main wrapper para sa grid layout */
-.inventory-grid-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
-    padding: 40px 5%;
-    background-color: #f9f9f9; /* Light background para lumitaw ang white cards */
+:root {
+    --bg-dark: #0a0a0a;
+    --accent-gold: #c5a059;
+    --accent-blue: #007bff;
+    --glass: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.1);
 }
 
-/* Ang mismong Card */
-.pyrox-card {
-    background: #ffffff;
-    border: 1px solid #eeeeee;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-.pyrox-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-
-/* Image section na may gray studio background */
-.pyrox-img-container {
-    background-color: #f4f4f4; 
-    height: 280px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-.pyrox-img-container img {
-    width: 100%;
-    height: auto;
-    object-fit: contain; /* Para magmukhang professional studio shot */
-}
-
-/* Text Content Area */
-.pyrox-content {
-    padding: 25px;
-    color: #000; /* Itim na text para sa luxury white theme */
-}
-
-.pyrox-content h3 {
-    font-family: 'Cinzel', serif;
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-    color: #1a1a1a;
-    letter-spacing: 1px;
-}
-
-.pyrox-description {
-    font-size: 0.8rem;
-    color: #666;
-    line-height: 1.5;
-    margin-bottom: 15px;
-    height: 45px;
-    overflow: hidden;
-}
-
-.pyrox-specs {
-    font-size: 0.75rem;
-    color: #999;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-}
-
-/* Separated Price Section sa kanan */
-.pyrox-price-tag {
-    text-align: right;
-    border-top: 1px solid #f0f0f0;
-    padding-top: 15px;
-}
-
-.pyrox-price-tag span {
+body {
+    background-color: var(--bg-dark);
+    color: #fff;
     font-family: 'Inter', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #000;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth; /* Para sa swabeng pag-scroll papuntang inventory */
 }
 
-/* View Button */
-.btn-pyrox {
-    margin-top: 15px;
-    display: block;
-    text-align: center;
-    padding: 12px;
-    border: 1px solid #000;
-    color: #000;
+/* --- HEADER UPDATES --- */
+header {
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--glass-border);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 5%;
+}
+
+.logo {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 6px;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #fff;
     text-decoration: none;
-    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #a0a0a0;
+    font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     transition: 0.3s;
 }
 
-.btn-pyrox:hover {
-    background: #000;
+.nav-links a:hover { color: #fff; }
+
+/* Luxury Nav Button (Book Consultation) */
+.btn-nav-luxury {
+    border: 1px solid #fff;
+    padding: 12px 25px !important;
+    color: #fff !important;
+    transition: all 0.4s ease !important;
+}
+
+.btn-nav-luxury:hover {
+    background: #fff;
+    color: #000 !important;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+.hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 20%, #0a0a0a 100%);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 900px;
+}
+
+.hero-content p.hero-subtitle {
+    letter-spacing: 8px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: var(--accent-gold); /* Luxury touch */
+}
+
+.hero-content h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2rem, 8vw, 5rem);
+    line-height: 1.1;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+/* Luxury Button Style */
+.btn-primary {
+    padding: 20px 50px;
+    border: 1px solid #fff;
+    background: transparent;
     color: #fff;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btn-primary:hover {
+    background: #fff;
+    color: #000;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+/* --- CURATED ARCHIVE SECTION --- */
+.section-dark {
+    padding: 120px 5%;
+}
+
+.archive-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-align: left; /* Base sa Screenshot 4 */
+}
+
+.grid-3-cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+/* --- CARD UPDATES --- */
+.card {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    padding: 25px;
+    border-radius: 4px;
+    transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--accent-blue);
+    transform: translateY(-10px);
+}
+
+/* Container para sa images para pantay ang crop */
+.card-image-container {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background: #111;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Siguradong hindi stretch ang sasakyan */
+    filter: brightness(0.8) grayscale(20%);
+    transition: 0.8s ease;
+}
+
+.card:hover img {
+    filter: brightness(1.1) grayscale(0%);
+    transform: scale(1.08);
+}
+
+.card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.25rem;
+    margin: 10px 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.card p {
+    color: #a0a0a0;
+    font-size: 0.85rem;
+    margin-bottom: 25px;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+/* View Detail Link */
+.view-detail {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 5px;
+    align-self: flex-start;
+    transition: 0.3s;
+}
+
+.view-detail:hover {
+    border-bottom: 1px solid #fff;
+    letter-spacing: 3px;
+}
+
+/* --- UTILITIES --- */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+    .navbar { flex-direction: column; gap: 20px; }
+    .hero-content h1 { font-size: 2.5rem; }
 }
