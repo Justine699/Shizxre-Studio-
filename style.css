@@ -127,3 +127,31 @@
         height: 250px;
     }
 }
+
+/* --- LUXURY PRICE BOX STYLE --- */
+
+/* Hiwalay na lalagyan para sa presyo */
+.price-container {
+    display: inline-block;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    padding: 8px 20px;
+    border-left: 3px solid var(--accent-gold); /* Eleganteng vertical line sa gilid */
+    background: rgba(197, 160, 89, 0.05); /* Sobrang labo na gold background */
+}
+
+.inventory-price {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.6rem;
+    color: var(--accent-gold);
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+/* Paghiwalayin ang Brand Name at Presyo */
+.inventory-info h2 {
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 15px;
+    margin-bottom: 0;
+}
