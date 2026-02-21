@@ -1,110 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Zhizxre Studio</title>
-  <!-- Link external CSS file -->
-  <link rel="stylesheet" href="styles.css" />
-  <!-- Google Font Nunito -->
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE MOTORS | Elite Automotive Maison</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@200;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-   <video autoplay muted loop playsinline id="bg-video">
-  <source src="videos/background.mp4" type="video/mp4" />
-  Your browser does not support the video tag.
- </video>
+    <header>
+        <div class="navbar">
+            <a href="index.html" class="logo">LUXE MOTORS</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Collection</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" class="btn-nav-luxury">Book Consultation</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<header>
-  <div class="logo" aria-label="Site Logo">SHIZXRE</div>
-  <nav aria-label="Primary navigation">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="character.html">Character</a></li>
-      <li><a href="#" tabindex="0">Item</a></li>
-      <li><a href="#" tabindex="0">About</a></li>
-    </ul>
-  </nav>
-  <div class="search-container">
-    <input type="search" placeholder="Toji Archon Exemple..." aria-label="Search character or item" />
-  </div>
-</header>
-
-<main role="main" aria-labelledby="pageTitle">
-  <h1 id="pageTitle">Preview</h1>
-
-  <div class="preview-container" aria-label="Character preview content">
-
-    <!-- Left Column: Appearance and Constellations -->
-    <section class="appearance-box" aria-labelledby="appearanceTitle">
-      <div class="appearance-header">
-        <h2 id="appearanceTitle">TOJI</h2>
-      </div>
-      <p class="appearance-content">
-        Toji Fushiguro is a peak-human assassin in Jujutsu Kaisen defined by his Heavenly Restriction, which exchanged all his cursed energy for superhuman physical prowess, speed, and heightened senses.
-      </p>
-      <video width="100%" height="auto" autoplay loop muted playsinline class="character-video">
-  <source src="videos/toji.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-      <div class="cluster-section" aria-label="Cluster">
-        <div class="cluster-label">Cluster</div>
-        <div class="constellation-icons">
-          <div class="cluster-icon" tabindex="0" title="Cluster"></div>
-      </div>
+    <section class="hero">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="C:\Users\Admin\Downloads\background 2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <p class="hero-subtitle">Beyond Performance</p>
+            <h1>The Gold Standard <br> of Performance</h1>
+            <a href="#inventory" class="btn-primary">Explore Inventory</a>
+        </div>
     </section>
 
-    <section class="skills-box">
-      <div class="skill-group" aria-label="Skills">
-        <h3>Skill</h3>
-        <div class="skill-item">
-          <div class="skill-icon" aria-hidden="true"></div>
-          <div class="skill-text">
-            <h4>Zero Cursed Energy:</h4>
-            <p>Completely undetectable to sorcerers, allowing him to sneak past the "Six Eyes".</p> </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-icon" aria-hidden="true"></div>
-          <div class="skill-text">
-            <h4>Heavenly Restricted Body</h4>
-            <p>Grants superhuman speed, reflexes, and strength, allowing him to fight Grade 1 and Special Grade sorcerers/curses.</p></div>
-        </div>
-      </div>
+    <section class="section-dark" id="inventory">
+        <div class="container">
+            <h2 class="archive-title">The Curated Archive</h2>
+            
+            <div class="grid-3-cols">
+                <div class="card">
+                    <div class="card-image-container">
+                        <img src="C:\Users\Admin\Downloads\9111.png" alt="911 Carrera S">
+                    </div>
+                    <div class="card-info">
+                        <h3>911 Carrera S</h3>
+                        <p>Pure engineering perfection in every curve.</p>
+                        <a href="#" class="view-detail">View Detail</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-image-container">
+                        <img src="C:\Users\Admin\Downloads\maybach.png" alt="S-Class Maybach">
+                    </div>
+                    <div class="card-info">
+                        <h3>S-Class Maybach</h3>
+                        <p>The pinnacle of luxury automotive travel.</p>
+                        <a href="#" class="view-detail">View Detail</a>
+                    </div>
+                </div>
 
-      <div class="skill-group" aria-label="Passive Skills">
-        <h3>Passive Skill</h3>
-        <div class="skill-item">
-          <div class="skill-icon" aria-hidden="true"></div>
-          <div class="skill-text">
-            <h4>The Sea Is My Stage</h4>
-            <p>Cooldown decreases based on attacks. Furina’s Energy restores 30% faster.</p>
-          </div>
+                <div class="card placeholder-card">
+                    <div class="card-info">
+                        <h3>Coming Soon</h3>
+                        <p>Discover the next masterpiece.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="skill-item">
-          <div class="skill-icon" aria-hidden="true"></div>
-          <div class="skill-text">
-            <h4>Endless Waltz</h4>
-            <p>Her movement speed increases while underwater or during Hydro Shield.</p>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-icon" aria-hidden="true"></div>
-          <div class="skill-text">
-            <h4>Unheard Confession</h4>
-            <p>Increases Elemental Burst DMG by 20% against marked opponents.</p>
-          </div>
-        </div>
-      </div>
     </section>
-  </div>
-
-  <button class="more-btn" aria-label="More about Toji">More...</button>
-</main>
-
-<footer role="contentinfo" aria-label="Site footer">
-  <p> Shizxre Studio </p>
-</footer>
 
 </body>
 </html>
