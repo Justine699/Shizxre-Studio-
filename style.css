@@ -185,7 +185,6 @@ header {
     transform: translateY(-10px);
 }
 
-/* Container para sa images para pantay ang crop */
 .card-image-container {
     width: 100%;
     height: 250px;
