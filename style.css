@@ -485,3 +485,43 @@ footer {
         font-size: 2.2rem; 
     }
 }
+
+/* --- FINAL MOBILE FIX --- */
+@media (max-width: 768px) {
+    /* Pinipilit nating maging magkatabi ang Logo at Nav */
+    .navbar {
+        flex-direction: row !important; 
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 15px 5% !important;
+    }
+
+    /* Tinatanggal ang padding ng UL at ginagawang horizontal */
+    .nav-links {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 10px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style: none !important;
+    }
+
+    /* Pinapaliit ang text para kumasya sa isang linya */
+    .nav-links a {
+        font-size: 10px !important;
+        letter-spacing: 1px !important;
+        white-space: nowrap; /* Pinipigilan nitong mag-wrap sa 2 lines */
+    }
+
+    /* Button adjustment para hindi masyadong malaki */
+    .btn-nav-luxury {
+        padding: 6px 10px !important;
+        border-width: 1px !important;
+    }
+
+    /* Logo adjustment */
+    .logo {
+        font-size: 1rem !important;
+        letter-spacing: 2px !important;
+    }
+}
