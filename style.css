@@ -478,55 +478,66 @@ footer {
         gap: 30px;
         text-align: center;
     }
-/* RE-STYLING THE ABOUT PAGE BENEFITS SECTION */
 
-.benefits-grid {
+/* --- LUXURY ABOUT GRID REPAIR --- */
+
+/* Ito ang container na mag-aayos sa 3 boxes */
+.why-choose-luxe-container {
     display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important; /* Pinipilit na maging 3 columns */
-    gap: 30px !important;
-    margin: 60px auto !important;
+    grid-template-columns: repeat(3, 1fr) !important; /* Pinipilit na maging tatlo sa isang linya */
+    gap: 20px !important;
     max-width: 1200px !important;
+    margin: 50px auto !important; /* Ginagawa nitong centered ang buong grid */
     padding: 0 20px !important;
 }
 
-.benefit-card {
-    background: rgba(255, 255, 255, 0.03) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    padding: 40px 30px !important;
+/* Styling para sa bawat box (Card) */
+.luxury-card {
+    background: #0f0f0f !important; /* Solid dark background para malinis */
+    border: 1px solid rgba(197, 160, 89, 0.3) !important; /* Gold border */
+    padding: 40px 20px !important;
     text-align: center !important;
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important; /* Sine-center lahat ng nasa loob */
-    justify-content: center !important;
-    transition: 0.4s ease-in-out !important;
-    min-height: 250px !important; /* Para pantay-pantay ang laki ng boxes */
+    align-items: center !important;
+    min-height: 280px !important;
+    transition: 0.4s ease !important;
 }
 
-.benefit-card i, .benefit-card span {
-    font-size: 2.5rem !important;
-    color: #c5a059 !important; /* Gold accent */
+.luxury-card:hover {
+    border-color: #c5a059 !important;
+    background: rgba(197, 160, 89, 0.05) !important;
+    transform: translateY(-10px) !important;
+}
+
+/* Icons styling */
+.luxury-card i, .luxury-card span {
+    font-size: 2rem !important;
+    color: #c5a059 !important;
     margin-bottom: 20px !important;
-    display: block !important;
 }
 
-.benefit-card h3 {
+/* Title styling */
+.luxury-card h3 {
     font-family: 'Cinzel', serif !important;
-    font-size: 1.1rem !important;
-    letter-spacing: 3px !important;
+    font-size: 1rem !important;
+    letter-spacing: 2px !important;
     margin-bottom: 15px !important;
     color: #fff !important;
+    text-transform: uppercase !important;
 }
 
-.benefit-card p {
+/* Description text */
+.luxury-card p {
     font-family: 'Inter', sans-serif !important;
     font-size: 0.85rem !important;
     color: #a0a0a0 !important;
     line-height: 1.6 !important;
 }
 
-/* Para sa Mobile - Magiging 1 column lang pag maliit ang screen */
-@media (max-width: 768px) {
-    .benefits-grid {
+/* Responsive: Pag cellphone ang gamit, magiging 1 column lang */
+@media (max-width: 900px) {
+    .why-choose-luxe-container {
         grid-template-columns: 1fr !important;
     }
 }
