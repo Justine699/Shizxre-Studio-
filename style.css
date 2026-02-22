@@ -478,3 +478,67 @@ footer {
         gap: 30px;
         text-align: center;
     }
+/* --- LUXURY ABOUT CARDS RECOVERY (PLACE AT THE VERY BOTTOM) --- */
+
+/* Container na nag-aayos para maging 3 columns ang mga box */
+.benefits-grid-about {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important; /* Hahatiin sa 3 columns */
+    gap: 30px !important;
+    padding: 80px 5% !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+}
+
+/* Ang mismong Box o Card style */
+.benefit-card-luxury {
+    background: rgba(255, 255, 255, 0.03) !important; /* Glass effect */
+    border: 1px solid rgba(197, 160, 89, 0.3) !important; /* Gold thin border */
+    padding: 50px 30px !important;
+    text-align: center !important;
+    transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    border-radius: 2px !important; /* Minimalist corners */
+}
+
+/* Hover effect para magmukhang premium */
+.benefit-card-luxury:hover {
+    border-color: #c5a059 !important; /* Liliwanag ang gold border */
+    background: rgba(197, 160, 89, 0.08) !important; /* Slight gold tint */
+    transform: translateY(-10px) !important; /* Swabeng aangat */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Icon/Emoji styling */
+.benefit-card-luxury span {
+    font-size: 2.5rem !important;
+    margin-bottom: 25px !important;
+    display: block !important;
+}
+
+/* Title (Exclusivity, etc.) */
+.benefit-card-luxury h3 {
+    font-family: 'Cinzel', serif !important;
+    letter-spacing: 4px !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 15px !important;
+    color: #fff !important;
+    text-transform: uppercase !important;
+}
+
+/* Description text */
+.benefit-card-luxury p {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.9rem !important;
+    color: #a0a0a0 !important;
+    line-height: 1.8 !important;
+}
+
+/* Responsive: Magiging 1 column pag cellphone ang gamit */
+@media (max-width: 992px) {
+    .benefits-grid-about {
+        grid-template-columns: 1fr !important;
+    }
+}
