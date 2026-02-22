@@ -478,3 +478,44 @@ footer {
         gap: 30px;
         text-align: center;
     }
+/* --- ULTIMATE LUXURY BOX FIX --- */
+
+/* Siguraduhin na ang grid ay laging 3 columns sa desktop */
+.benefits-grid-about {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 30px !important;
+    padding: 60px 5% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    clear: both !important;
+}
+
+/* Styling para sa mismong mga Box (Exclusivity, etc.) */
+.benefit-card-luxury {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid #c5a059 !important; /* Gold Border */
+    padding: 50px 30px !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 300px !important;
+}
+
+/* Para sa Icons/Emoji */
+.benefit-card-luxury span, .benefit-card-luxury i {
+    font-size: 2.5rem !important;
+    margin-bottom: 20px !important;
+    color: #c5a059 !important;
+    display: block !important;
+}
+
+/* Para sa Titles */
+.benefit-card-luxury h3 {
+    font-family: 'Cinzel', serif !important;
+    letter-spacing: 3px !important;
+    color: #fff !important;
+    margin-bottom: 15px !important;
+}
