@@ -19,39 +19,28 @@ body {
 }
 
 /* --- HEADER UPDATES --- */
-header {
-    background: rgba(10, 10, 10, 0.7);
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid var(--glass-border);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
+/* --- HEADER FIXES --- */
 .navbar {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    padding: 25px 5%;
-}
-
-.logo {
-    font-family: 'Cinzel', serif;
-    letter-spacing: 6px;
-    font-weight: 700;
-    font-size: 1.4rem;
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Keep logo and nav aligned vertically */
+    padding: 20px 5%;
 }
 
 .nav-links {
-    display: flex;
-    list-style: none;
-    gap: 40px;
-    align-items: center;
+    display: flex;
+    list-style: none;
+    gap: 20px; /* Reduced gap for better fit */
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure the logo doesn't shrink */
+.logo {
+    flex-shrink: 0;
 }
 
 .nav-links a {
@@ -471,10 +460,28 @@ footer {
     transform: translateY(-3px);
 }
 
-/* Responsive */
+/* Responsive Fix */
 @media (max-width: 768px) {
-    footer {
-        flex-direction: column;
-        gap: 30px;
-        text-align: center;
+    .navbar { 
+        flex-direction: row; /* Keep it horizontal */
+        justify-content: space-between;
+        padding: 15px 5%;
     }
+
+    .nav-links {
+        gap: 10px; /* Tighter gap for mobile */
+    }
+
+    .nav-links a {
+        font-size: 0.65rem; /* Smaller text so it fits */
+        letter-spacing: 1px;
+    }
+
+    .btn-nav-luxury {
+        padding: 8px 12px !important; /* Smaller button */
+    }
+
+    .hero-content h1 { 
+        font-size: 2.2rem; 
+    }
+}
