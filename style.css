@@ -2,30 +2,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@200;400;600&display=swap');
 
 :root {
-    --bg-dark: #0a0a0a;
-    --accent-gold: #c5a059;
-    --accent-blue: #007bff;
-    --glass: rgba(255, 255, 255, 0.03);
-    --glass-border: rgba(255, 255, 255, 0.1);
+    --bg-dark: #0a0a0a;
+    --accent-gold: #c5a059;
+    --accent-blue: #007bff;
+    --glass: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.1);
 }
 
 body {
-    background-color: var(--bg-dark);
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    -webkit-font-smoothing: antialiased;
-    scroll-behavior: smooth; /* Para sa swabeng pag-scroll papuntang inventory */
+    background-color: var(--bg-dark);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth; /* Para sa swabeng pag-scroll papuntang inventory */
 }
 
-/* --- HEADER RECOVERY --- */
+/* --- HEADER UPDATES --- */
 header {
-    background: transparent; /* Ginawang transparent gaya ng nasa picture */
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--glass-border);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar {
@@ -33,218 +34,223 @@ header {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Pantay ang logo at menu horizontally */
-    padding: 20px 5%;
+    padding: 25px 5%;
+}
+
+.logo {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 6px;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
 .nav-links {
-    display: flex; /* Eto ang magpapahiga sa menu links */
+    display: flex;
     list-style: none;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
+    gap: 40px;
     align-items: center;
-}
-
-.nav-links li {
-    margin: 0;
-    padding: 0;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #fff;
+    color: #a0a0a0;
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     transition: 0.3s;
 }
 
-/* Luxury Nav Button */
+.nav-links a:hover { color: #fff; }
+
+/* Luxury Nav Button (Book Consultation) */
 .btn-nav-luxury {
     border: 1px solid #fff;
-    padding: 10px 20px !important;
+    padding: 12px 25px !important;
     color: #fff !important;
+    transition: all 0.4s ease !important;
 }
 
 .btn-nav-luxury:hover {
-    background: #fff;
-    color: #000 !important;
+    background: #fff;
+    color: #000 !important;
 }
 
 /* --- HERO SECTION --- */
 .hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .hero-video {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.6;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
 }
 
 .hero-overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, transparent 20%, #0a0a0a 100%);
-    z-index: 2;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 20%, #0a0a0a 100%);
+    z-index: 2;
 }
 
 .hero-content {
-    position: relative;
-    z-index: 3;
-    text-align: center;
-    max-width: 900px;
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 900px;
 }
 
 .hero-content p.hero-subtitle {
-    letter-spacing: 8px;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    color: var(--accent-gold); /* Luxury touch */
+    letter-spacing: 8px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: var(--accent-gold); /* Luxury touch */
 }
 
 .hero-content h1 {
-    font-family: 'Cinzel', serif;
-    font-size: clamp(2rem, 8vw, 5rem);
-    line-height: 1.1;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    font-weight: 400;
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2rem, 8vw, 5rem);
+    line-height: 1.1;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: 400;
 }
 
 /* Luxury Button Style */
 .btn-primary {
-    padding: 20px 50px;
-    border: 1px solid #fff;
-    background: transparent;
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    font-size: 0.8rem;
-    text-decoration: none;
-    transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    padding: 20px 50px;
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .btn-primary:hover {
-    background: #fff;
-    color: #000;
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    background: #fff;
+    color: #000;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
 }
 
 /* --- CURATED ARCHIVE SECTION --- */
 .section-dark {
-    padding: 120px 5%;
+    padding: 120px 5%;
 }
 
 .archive-title {
-    font-family: 'Cinzel', serif;
-    font-size: 2.5rem;
-    margin-bottom: 60px;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    text-align: left; /* Base sa Screenshot 4 */
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-align: left; /* Base sa Screenshot 4 */
 }
 
 .grid-3-cols {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
 }
 
 /* --- CARD UPDATES --- */
 .card {
-    background: var(--glass);
-    border: 1px solid var(--glass-border);
-    padding: 25px;
-    border-radius: 4px;
-    transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-    display: flex;
-    flex-direction: column;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    padding: 25px;
+    border-radius: 4px;
+    transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: var(--accent-gold);
-    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--accent-gold);
+    transform: translateY(-10px);
 }
 
 /* Container para sa images para pantay ang crop */
 .card-image-container {
-    width: 100%;
-    height: 250px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    background: #111;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background: #111;
 }
 
 .card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Siguradong hindi stretch ang sasakyan */
-    filter: brightness(0.8) grayscale(20%);
-    transition: 0.8s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Siguradong hindi stretch ang sasakyan */
+    filter: brightness(0.8) grayscale(20%);
+    transition: 0.8s ease;
 }
 
 .card:hover img {
-    filter: brightness(1.1) grayscale(0%);
-    transform: scale(1.08);
+    filter: brightness(1.1) grayscale(0%);
+    transform: scale(1.08);
 }
 
 .card h3 {
-    font-family: 'Cinzel', serif;
-    font-size: 1.25rem;
-    margin: 10px 0;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    font-family: 'Cinzel', serif;
+    font-size: 1.25rem;
+    margin: 10px 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 .card p {
-    color: #a0a0a0;
-    font-size: 0.85rem;
-    margin-bottom: 25px;
-    font-weight: 300;
-    line-height: 1.8;
+    color: #a0a0a0;
+    font-size: 0.85rem;
+    margin-bottom: 25px;
+    font-weight: 300;
+    line-height: 1.8;
 }
 
 /* View Detail Link */
 .view-detail {
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 0.7rem;
-    letter-spacing: 2px;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding-bottom: 5px;
-    align-self: flex-start;
-    transition: 0.3s;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 5px;
+    align-self: flex-start;
+    transition: 0.3s;
 }
 
 .view-detail:hover {
-    border-bottom: 1px solid #fff;
-    letter-spacing: 3px;
+    border-bottom: 1px solid #fff;
+    letter-spacing: 3px;
 }
 
 /* --- UTILITIES --- */
 .container {
-    max-width: 1400px;
-    margin: 0 auto;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 /* Responsive Fix */
 @media (max-width: 768px) {
-    .navbar { flex-direction: column; gap: 20px; }
-    .hero-content h1 { font-size: 2.5rem; }
+    .navbar { flex-direction: column; gap: 20px; }
+    .hero-content h1 { font-size: 2.5rem; }
 
 }
 
@@ -252,282 +258,275 @@ header {
 
 /* Main Container - Ginawang 2-column layout para sa desktop */
 .contact-section {
-    padding: 150px 8% 100px;
-    max-width: 1400px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 100px;
-    align-items: start;
+    padding: 150px 8% 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: start;
 }
 
 /* Luxury Title Styling */
 .contact-section h2 {
-    grid-column: 1 / -1;
-    font-family: 'Cinzel', serif;
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    letter-spacing: 12px;
-    text-transform: uppercase;
-    margin-bottom: 60px;
-    border-bottom: 1px solid var(--accent-gold);
-    display: inline-block;
-    padding-bottom: 20px;
+    grid-column: 1 / -1;
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+    border-bottom: 1px solid var(--accent-gold);
+    display: inline-block;
+    padding-bottom: 20px;
 }
 
 /* Glassmorphism Form Container */
 .contact-form {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
-    padding: 50px;
-    border: 1px solid var(--glass-border);
-    backdrop-filter: blur(10px);
-    border-radius: 2px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+    padding: 50px;
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 /* Input Group Styling */
 .input-group {
-    position: relative;
-    display: flex;
-    flex-direction: column;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .input-group label {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: var(--accent-gold);
-    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--accent-gold);
+    margin-bottom: 10px;
 }
 
 /* Minimalist Luxury Inputs */
-.contact-form input, 
+.contact-form input, 
 .contact-form textarea {
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 12px 0;
-    color: #fff;
-    font-size: 1rem;
-    font-family: 'Inter', sans-serif;
-    transition: all 0.4s ease;
-    outline: none;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 0;
+    color: #fff;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.4s ease;
+    outline: none;
 }
 
-.contact-form input:focus, 
+.contact-form input:focus, 
 .contact-form textarea:focus {
-    border-bottom: 1px solid var(--accent-gold);
-    padding-left: 10px; /* Subtle movement effect */
+    border-bottom: 1px solid var(--accent-gold);
+    padding-left: 10px; /* Subtle movement effect */
 }
 
 /* Send Message Button - Floating Style */
 .btn-send {
-    margin-top: 20px;
-    padding: 20px 40px;
-    background: transparent;
-    color: #fff;
-    border: 1px solid var(--accent-gold);
-    font-family: 'Cinzel', serif;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-size: 0.8rem;
-    cursor: pointer;
-    transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    align-self: flex-start;
+    margin-top: 20px;
+    padding: 20px 40px;
+    background: transparent;
+    color: #fff;
+    border: 1px solid var(--accent-gold);
+    font-family: 'Cinzel', serif;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    align-self: flex-start;
 }
 
 .btn-send:hover {
-    background: var(--accent-gold);
-    color: #000;
-    box-shadow: 0 10px 30px rgba(197, 160, 89, 0.2);
-    transform: translateY(-3px);
+    background: var(--accent-gold);
+    color: #000;
+    box-shadow: 0 10px 30px rgba(197, 160, 89, 0.2);
+    transform: translateY(-3px);
 }
 
 /* Contact Details Styling */
 .contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
 }
 
 .info-card {
-    border-left: 2px solid var(--accent-gold);
-    padding-left: 30px;
+    border-left: 2px solid var(--accent-gold);
+    padding-left: 30px;
 }
 
 .info-card h4 {
-    font-family: 'Cinzel', serif;
-    font-size: 1.1rem;
-    letter-spacing: 3px;
-    margin-bottom: 15px;
-    color: #fff;
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    color: #fff;
 }
 
 .info-card p, .info-card a {
-    color: #a0a0a0;
-    text-decoration: none;
-    font-size: 0.95rem;
-    line-height: 1.8;
-    transition: 0.3s;
+    color: #a0a0a0;
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    transition: 0.3s;
 }
 
 .info-card a:hover {
-    color: var(--accent-gold);
+    color: var(--accent-gold);
 }
 
 /* Responsive Fix */
 @media (max-width: 1024px) {
-    .contact-section {
-        grid-template-columns: 1fr;
-        padding-top: 120px;
-    }
-    
-    .contact-form {
-        padding: 30px;
-    }
+    .contact-section {
+        grid-template-columns: 1fr;
+        padding-top: 120px;
+    }
+    
+    .contact-form {
+        padding: 30px;
+    }
 }
 
 /* --- LUXURY FOOTER & ADDRESS STYLING --- */
 
 /* Wrapper para sa Address Section */
 .contact-info-footer {
-    padding: 100px 8%;
-    border-top: 1px solid var(--glass-border);
-    margin-top: 50px;
-    background: linear-gradient(to bottom, transparent, rgba(197, 160, 89, 0.02));
+    padding: 100px 8%;
+    border-top: 1px solid var(--glass-border);
+    margin-top: 50px;
+    background: linear-gradient(to bottom, transparent, rgba(197, 160, 89, 0.02));
 }
 
 /* Address Styling */
 .contact-info-footer h3 {
-    font-family: 'Cinzel', serif;
-    font-size: 0.8rem;
-    color: var(--accent-gold);
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    margin-bottom: 15px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    color: var(--accent-gold);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
 }
 
 .contact-info-footer p {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 200;
-    color: #ffffff;
-    letter-spacing: 1px;
-    margin-bottom: 40px;
-    opacity: 0.9;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 200;
+    color: #ffffff;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+    opacity: 0.9;
 }
 
 /* Luxury Footer Base */
 footer {
-    padding: 60px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 60px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .copyright {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.7rem;
-    color: #666;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .copyright span {
-    color: var(--accent-gold); /* Highlight LUXE MOTORS */
-    font-weight: 600;
+    color: var(--accent-gold); /* Highlight LUXE MOTORS */
+    font-weight: 600;
 }
 
 /* Social Icons Luxury Style */
 .social-links {
-    display: flex;
-    justify-content: center;   
-    align-items: center;       
-    gap: 30px;             
-    margin-top: 25px;          
-    width: 100%;
+    display: flex;
+    justify-content: center;   
+    align-items: center;       
+    gap: 30px;             
+    margin-top: 25px;          
+    width: 100%;
 }
 
 .social-links a {
-    color: #fff;
-    font-size: 1rem;
-    text-decoration: none;
-    transition: all 0.4s ease;
-    opacity: 0.5;
+    color: #fff;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    opacity: 0.5;
 }
 
 .social-links a:hover {
-    color: var(--accent-gold);
-    opacity: 1;
-    transform: translateY(-3px);
+    color: var(--accent-gold);
+    opacity: 1;
+    transform: translateY(-3px);
 }
 
-/* Responsive Fix */
+/* Responsive */
 @media (max-width: 768px) {
-    .navbar { 
-        flex-direction: row; /* Keep it horizontal */
-        justify-content: space-between;
-        padding: 15px 5%;
+    footer {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
     }
+/* RE-STYLING THE ABOUT PAGE BENEFITS SECTION */
 
-    .nav-links {
-        gap: 10px; /* Tighter gap for mobile */
-    }
-
-    .nav-links a {
-        font-size: 0.65rem; /* Smaller text so it fits */
-        letter-spacing: 1px;
-    }
-
-    .btn-nav-luxury {
-        padding: 8px 12px !important; /* Smaller button */
-    }
-
-    .hero-content h1 { 
-        font-size: 2.2rem; 
-    }
+.benefits-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important; /* Pinipilit na maging 3 columns */
+    gap: 30px !important;
+    margin: 60px auto !important;
+    max-width: 1200px !important;
+    padding: 0 20px !important;
 }
 
-/* --- FINAL MOBILE FIX --- */
+.benefit-card {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 40px 30px !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; /* Sine-center lahat ng nasa loob */
+    justify-content: center !important;
+    transition: 0.4s ease-in-out !important;
+    min-height: 250px !important; /* Para pantay-pantay ang laki ng boxes */
+}
+
+.benefit-card i, .benefit-card span {
+    font-size: 2.5rem !important;
+    color: #c5a059 !important; /* Gold accent */
+    margin-bottom: 20px !important;
+    display: block !important;
+}
+
+.benefit-card h3 {
+    font-family: 'Cinzel', serif !important;
+    font-size: 1.1rem !important;
+    letter-spacing: 3px !important;
+    margin-bottom: 15px !important;
+    color: #fff !important;
+}
+
+.benefit-card p {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.85rem !important;
+    color: #a0a0a0 !important;
+    line-height: 1.6 !important;
+}
+
+/* Para sa Mobile - Magiging 1 column lang pag maliit ang screen */
 @media (max-width: 768px) {
-    /* Pinipilit nating maging magkatabi ang Logo at Nav */
-    .navbar {
-        flex-direction: row !important; 
-        justify-content: space-between !important;
-        align-items: center !important;
-        padding: 15px 5% !important;
+    .benefits-grid {
+        grid-template-columns: 1fr !important;
     }
-
-    /* Tinatanggal ang padding ng UL at ginagawang horizontal */
-    .nav-links {
-        display: flex !important;
-        flex-direction: row !important;
-        gap: 10px !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        list-style: none !important;
     }
-
-    /* Pinapaliit ang text para kumasya sa isang linya */
-    .nav-links a {
-        font-size: 10px !important;
-        letter-spacing: 1px !important;
-        white-space: nowrap; /* Pinipigilan nitong mag-wrap sa 2 lines */
-    }
-
-    /* Button adjustment para hindi masyadong malaki */
-    .btn-nav-luxury {
-        padding: 6px 10px !important;
-        border-width: 1px !important;
-    }
-
-    /* Logo adjustment */
-    .logo {
-        font-size: 1rem !important;
-        letter-spacing: 2px !important;
-    }
-}
-
