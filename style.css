@@ -450,8 +450,11 @@ footer {
 /* Social Icons Luxury Style */
 .social-links {
     display: flex;
-    gap: 25px;
-    text-align: center;
+    justify-content: center;   
+    align-items: center;       
+    gap: 30px;             
+    margin-top: 25px;          
+    width: 100%;
 }
 
 .social-links a {
@@ -475,4 +478,5 @@ footer {
         gap: 30px;
         text-align: center;
     }
+
 
