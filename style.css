@@ -478,3 +478,96 @@ footer {
         gap: 30px;
         text-align: center;
     }
+/* --- LUXURY ABOUT PAGE STYLING --- */
+
+.about-section {
+    padding: 150px 10% 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Introduction Text */
+.about-intro {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    line-height: 2;
+    color: #d1d1d1;
+    font-weight: 300;
+    margin-bottom: 80px;
+    border-left: 2px solid var(--accent-gold);
+    padding-left: 40px;
+}
+
+/* Philosophy Section */
+.philosophy-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 120px;
+}
+
+.philosophy-text h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    color: var(--accent-gold);
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.philosophy-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #a0a0a0;
+}
+
+/* Why Choose Us Grid - Mas eleganteng layout */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.benefit-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), transparent);
+    border: 1px solid var(--glass-border);
+    padding: 50px 30px;
+    text-align: center;
+    transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.benefit-card:hover {
+    border-color: var(--accent-gold);
+    transform: translateY(-10px);
+    background: rgba(197, 160, 89, 0.05);
+}
+
+.benefit-card i {
+    font-size: 2.5rem;
+    color: var(--accent-gold);
+    margin-bottom: 25px;
+    display: block;
+}
+
+.benefit-card h3 {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 3px;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.benefit-card p {
+    font-size: 0.85rem;
+    color: #888;
+    line-height: 1.6;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 992px) {
+    .philosophy-container, .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+}
