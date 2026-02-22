@@ -1,68 +1,555 @@
-/* --- RESPONSIVE FIX --- */
-@media (max-width: 768px) {
-    .navbar { flex-direction: column; gap: 20px; }
-    .hero-content h1 { font-size: 2.5rem; }
-    
-    footer {
-        flex-direction: column;
-        gap: 30px;
-        text-align: center;
-    }
-} /* <--- Dito ka nagkulang ng bracket kaya ayaw gumana ng iba */
+/* Import Luxury Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@200;400;600&display=swap');
 
-/* --- LUXURY ABOUT CARDS RECOVERY --- */
+:root {
+    --bg-dark: #0a0a0a;
+    --accent-gold: #c5a059;
+    --accent-blue: #007bff;
+    --glass: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth; /* Para sa swabeng pag-scroll papuntang inventory */
+}
+
+/* --- HEADER UPDATES --- */
+header {
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--glass-border);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 5%;
+}
+
+.logo {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 6px;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #a0a0a0;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover { color: #fff; }
+
+/* Luxury Nav Button (Book Consultation) */
+.btn-nav-luxury {
+    border: 1px solid #fff;
+    padding: 12px 25px !important;
+    color: #fff !important;
+    transition: all 0.4s ease !important;
+}
+
+.btn-nav-luxury:hover {
+    background: #fff;
+    color: #000 !important;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+.hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 20%, #0a0a0a 100%);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 900px;
+}
+
+.hero-content p.hero-subtitle {
+    letter-spacing: 8px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: var(--accent-gold); /* Luxury touch */
+}
+
+.hero-content h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2rem, 8vw, 5rem);
+    line-height: 1.1;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+/* Luxury Button Style */
+.btn-primary {
+    padding: 20px 50px;
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btn-primary:hover {
+    background: #fff;
+    color: #000;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+/* --- CURATED ARCHIVE SECTION --- */
+.section-dark {
+    padding: 120px 5%;
+}
+
+.archive-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-align: left; /* Base sa Screenshot 4 */
+}
+
+.grid-3-cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+/* --- CARD UPDATES --- */
+.card {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    padding: 25px;
+    border-radius: 4px;
+    transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--accent-gold);
+    transform: translateY(-10px);
+}
+
+/* Container para sa images para pantay ang crop */
+.card-image-container {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background: #111;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Siguradong hindi stretch ang sasakyan */
+    filter: brightness(0.8) grayscale(20%);
+    transition: 0.8s ease;
+}
+
+.card:hover img {
+    filter: brightness(1.1) grayscale(0%);
+    transform: scale(1.08);
+}
+
+.card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.25rem;
+    margin: 10px 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.card p {
+    color: #a0a0a0;
+    font-size: 0.85rem;
+    margin-bottom: 25px;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+/* View Detail Link */
+.view-detail {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 5px;
+    align-self: flex-start;
+    transition: 0.3s;
+}
+
+.view-detail:hover {
+    border-bottom: 1px solid #fff;
+    letter-spacing: 3px;
+}
+
+/* --- UTILITIES --- */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+    .navbar { flex-direction: column; gap: 20px; }
+    .hero-content h1 { font-size: 2.5rem; }
+
+}
+
+/* --- LUXURY CONTACT PAGE ENHANCEMENTS --- */
+
+/* Main Container - Ginawang 2-column layout para sa desktop */
+.contact-section {
+    padding: 150px 8% 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: start;
+}
+
+/* Luxury Title Styling */
+.contact-section h2 {
+    grid-column: 1 / -1;
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+    border-bottom: 1px solid var(--accent-gold);
+    display: inline-block;
+    padding-bottom: 20px;
+}
+
+/* Glassmorphism Form Container */
+.contact-form {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+    padding: 50px;
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Input Group Styling */
+.input-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--accent-gold);
+    margin-bottom: 10px;
+}
+
+/* Minimalist Luxury Inputs */
+.contact-form input, 
+.contact-form textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 0;
+    color: #fff;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.4s ease;
+    outline: none;
+}
+
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    border-bottom: 1px solid var(--accent-gold);
+    padding-left: 10px; /* Subtle movement effect */
+}
+
+/* Send Message Button - Floating Style */
+.btn-send {
+    margin-top: 20px;
+    padding: 20px 40px;
+    background: transparent;
+    color: #fff;
+    border: 1px solid var(--accent-gold);
+    font-family: 'Cinzel', serif;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    align-self: flex-start;
+}
+
+.btn-send:hover {
+    background: var(--accent-gold);
+    color: #000;
+    box-shadow: 0 10px 30px rgba(197, 160, 89, 0.2);
+    transform: translateY(-3px);
+}
+
+/* Contact Details Styling */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.info-card {
+    border-left: 2px solid var(--accent-gold);
+    padding-left: 30px;
+}
+
+.info-card h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.info-card p, .info-card a {
+    color: #a0a0a0;
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    transition: 0.3s;
+}
+
+.info-card a:hover {
+    color: var(--accent-gold);
+}
+
+/* Responsive Fix */
+@media (max-width: 1024px) {
+    .contact-section {
+        grid-template-columns: 1fr;
+        padding-top: 120px;
+    }
+    
+    .contact-form {
+        padding: 30px;
+    }
+}
+
+/* --- LUXURY FOOTER & ADDRESS STYLING --- */
+
+/* Wrapper para sa Address Section */
+.contact-info-footer {
+    padding: 100px 8%;
+    border-top: 1px solid var(--glass-border);
+    margin-top: 50px;
+    background: linear-gradient(to bottom, transparent, rgba(197, 160, 89, 0.02));
+}
+
+/* Address Styling */
+.contact-info-footer h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    color: var(--accent-gold);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.contact-info-footer p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 200;
+    color: #ffffff;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+/* Luxury Footer Base */
+footer {
+    padding: 60px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.copyright {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.copyright span {
+    color: var(--accent-gold); /* Highlight LUXE MOTORS */
+    font-weight: 600;
+}
+
+/* Social Icons Luxury Style */
+.social-links {
+    display: flex;
+    justify-content: center;   
+    align-items: center;       
+    gap: 30px;             
+    margin-top: 25px;          
+    width: 100%;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    opacity: 0.5;
+}
+
+.social-links a:hover {
+    color: var(--accent-gold);
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+/* --- LUXURY ABOUT BOX STYLING --- */
+
+.about-luxury-section {
+    padding: 100px 5%;
+    background: linear-gradient(to bottom, #0a0a0a, #111);
+}
+
+.luxury-title {
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    letter-spacing: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 80px;
+}
 
 .benefits-grid-about {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
-    gap: 30px !important;
-    padding: 80px 5% !important;
+    gap: 40px !important;
     max-width: 1400px !important;
     margin: 0 auto !important;
 }
 
+/* Ang Luxury Box/Card */
 .benefit-card-luxury {
-    background: rgba(255, 255, 255, 0.03) !important;
-    border: 1px solid rgba(197, 160, 89, 0.3) !important;
-    padding: 50px 30px !important;
+    background: rgba(255, 255, 255, 0.02) !important; /* Very subtle glass effect */
+    border: 1px solid rgba(197, 160, 89, 0.2) !important; /* Gold outline */
+    padding: 60px 40px !important;
     text-align: center !important;
-    transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1) !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    border-radius: 2px !important;
+    position: relative !important;
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    overflow: hidden;
 }
 
+/* Hover Effect: Lalabas ang gold glow */
 .benefit-card-luxury:hover {
-    border-color: var(--accent-gold) !important;
-    background: rgba(197, 160, 89, 0.08) !important;
-    transform: translateY(-10px) !important;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
+    background: rgba(197, 160, 89, 0.05) !important;
+    border-color: #c5a059 !important;
+    transform: translateY(-15px) !important;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5) !important;
 }
 
-.benefit-card-luxury span {
-    font-size: 2.5rem !important;
-    margin-bottom: 25px !important;
+/* Card Icon Styling */
+.card-icon {
+    font-size: 3rem !important;
+    margin-bottom: 30px !important;
     display: block !important;
+    filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.3));
 }
 
+/* Card Heading */
 .benefit-card-luxury h3 {
     font-family: 'Cinzel', serif !important;
-    letter-spacing: 4px !important;
-    font-size: 1.1rem !important;
-    margin-bottom: 15px !important;
+    font-size: 1.2rem !important;
     color: #fff !important;
+    letter-spacing: 4px !important;
+    margin-bottom: 20px !important;
     text-transform: uppercase !important;
 }
 
+/* Card Description */
 .benefit-card-luxury p {
     font-family: 'Inter', sans-serif !important;
-    font-size: 0.9rem !important;
-    color: #a0a0a0 !important;
+    color: #888 !important;
     line-height: 1.8 !important;
+    font-size: 0.9rem !important;
+    font-weight: 200 !important;
 }
 
-/* Tablet/Mobile View for About Cards */
+/* Responsive: 1 column for mobile */
 @media (max-width: 992px) {
     .benefits-grid-about {
         grid-template-columns: 1fr !important;
