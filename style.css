@@ -251,4 +251,124 @@ header {
 @media (max-width: 768px) {
     .navbar { flex-direction: column; gap: 20px; }
     .hero-content h1 { font-size: 2.5rem; }
+
+}
+
+/* --- CONTACT PAGE STYLING ENHANCEMENTS --- */
+
+/* Container para sa buong Contact Section */
+.contact-container {
+    max-width: 1200px;
+    margin: 150px auto 100px; /* Space para sa fixed header */
+    padding: 0 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Hahatiin sa dalawa: Form at Info */
+    gap: 80px;
+}
+
+/* Pag-ayos sa "Get In Touch" na heading */
+.contact-section h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    grid-column: 1 / -1; /* Occupy full width */
+}
+
+/* Styling para sa Form Layout */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Styling sa Input Fields at Textarea */
+.contact-form .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-form label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-gold);
+}
+
+.contact-form input, 
+.contact-form textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    padding: 15px;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    transition: 0.3s;
+    outline: none;
+}
+
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    border-color: var(--accent-gold);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Send Message Button */
+.btn-send {
+    padding: 15px 30px;
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: 0.4s;
+    width: fit-content;
+    margin-top: 10px;
+}
+
+.btn-send:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* Contact Info Section */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.info-item i {
+    color: var(--accent-gold);
+    font-size: 1.2rem;
+}
+
+.info-item h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    margin: 0 0 5px 0;
+    letter-spacing: 1px;
+}
+
+.info-item p, .info-item a {
+    color: #a0a0a0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Responsive adjustment */
+@media (max-width: 900px) {
+    .contact-container {
+        grid-template-columns: 1fr; /* Isang column na lang pag mobile */
+        margin-top: 100px;
+    }
 }
