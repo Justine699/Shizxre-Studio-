@@ -451,6 +451,7 @@ footer {
 .social-links {
     display: flex;
     gap: 25px;
+    text-align: center;
 }
 
 .social-links a {
@@ -474,3 +475,4 @@ footer {
         gap: 30px;
         text-align: center;
     }
+
