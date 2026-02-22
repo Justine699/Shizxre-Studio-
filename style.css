@@ -18,48 +18,53 @@ body {
     scroll-behavior: smooth; /* Para sa swabeng pag-scroll papuntang inventory */
 }
 
-/* --- HEADER UPDATES --- */
-/* --- HEADER FIXES --- */
+/* --- HEADER RECOVERY --- */
+header {
+    background: transparent; /* Ginawang transparent gaya ng nasa picture */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .navbar {
     max-width: 1400px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Keep logo and nav aligned vertically */
+    align-items: center; /* Pantay ang logo at menu horizontally */
     padding: 20px 5%;
 }
 
 .nav-links {
-    display: flex;
+    display: flex; /* Eto ang magpapahiga sa menu links */
     list-style: none;
-    gap: 20px; /* Reduced gap for better fit */
+    gap: 30px;
+    margin: 0;
+    padding: 0;
     align-items: center;
+}
+
+.nav-links li {
     margin: 0;
     padding: 0;
 }
 
-/* Ensure the logo doesn't shrink */
-.logo {
-    flex-shrink: 0;
-}
-
 .nav-links a {
-    text-decoration: none;
-    color: #a0a0a0;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: 0.3s;
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s;
 }
 
-.nav-links a:hover { color: #fff; }
-
-/* Luxury Nav Button (Book Consultation) */
+/* Luxury Nav Button */
 .btn-nav-luxury {
-    border: 1px solid #fff;
-    padding: 12px 25px !important;
-    color: #fff !important;
-    transition: all 0.4s ease !important;
+    border: 1px solid #fff;
+    padding: 10px 20px !important;
+    color: #fff !important;
 }
 
 .btn-nav-luxury:hover {
@@ -525,3 +530,4 @@ footer {
         letter-spacing: 2px !important;
     }
 }
+
