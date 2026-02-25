@@ -530,92 +530,124 @@ footer {
         grid-template-columns: 1fr !important;
     }
 
-/* --- SUB-PAGE HEADER ADJUSTMENT --- */
-/* Dahil fixed ang header, kailangan ng top padding ang main content */
-main {
-    padding-top: 100px;
-}
+/* --- PRODUCTS / INVENTORY PAGE FIX --- */
 
-/* --- INVENTORY PAGE SPECIFIC --- */
-.inventory-header {
-    text-align: center;
-    padding: 80px 5% 40px;
-}
-
-.inventory-header h1 {
+/* Title adjustment para sa Inventory */
+.section-dark h2 {
     font-family: 'Cinzel', serif;
-    font-size: clamp(2rem, 5vw, 3rem);
-    letter-spacing: 10px;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    margin-top: 40px; /* Space mula sa fixed header */
     text-transform: uppercase;
-    color: #fff;
+    letter-spacing: 5px;
+    text-align: center;
 }
 
-/* Ginagamit nito ang existing mong .grid-3-cols at .card class */
-.inventory-grid {
+/* Wrapper para maging 3 columns katulad ng Home */
+.inventory-grid-wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 40px;
-    padding: 40px 0;
 }
 
-.car-specs {
-    font-size: 0.75rem;
-    letter-spacing: 1px;
-    color: var(--accent-gold);
-    margin-bottom: 10px;
+/* Syncing pyrox-card sa styling ng main .card */
+.pyrox-card {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    padding: 25px;
+    border-radius: 4px;
+    transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.pyrox-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--accent-gold);
+    transform: translateY(-10px);
+}
+
+/* Image Container */
+.pyrox-img-container {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background: #111;
+}
+
+.pyrox-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8) grayscale(20%);
+    transition: 0.8s ease;
+}
+
+.pyrox-card:hover .pyrox-img-container img {
+    filter: brightness(1.1) grayscale(0%);
+    transform: scale(1.08);
+}
+
+/* Content & Typography */
+.pyrox-content h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.25rem;
+    margin: 10px 0;
+    letter-spacing: 2px;
     text-transform: uppercase;
-}
-
-.car-price {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-top: auto;
     color: #fff;
 }
 
-/* --- ABOUT PAGE RE-STYLING --- */
-.about-hero {
-    text-align: center;
-    padding: 100px 10%;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.about-hero h1 {
-    font-family: 'Cinzel', serif;
-    letter-spacing: 12px;
-    text-transform: uppercase;
-    margin-bottom: 30px;
-    color: var(--accent-gold);
-}
-
-.about-hero p {
-    font-size: 1.1rem;
-    line-height: 2;
+.pyrox-description {
     color: #a0a0a0;
-    font-weight: 200;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    font-weight: 300;
+    line-height: 1.6;
 }
 
-/* Override para sa About benefits section para maging consistent */
-.about-benefits {
-    background: linear-gradient(to bottom, #0a0a0a, #111);
-    padding: 100px 5%;
-}
-
-/* --- BROKEN IMAGE FIX --- */
-/* Para hindi pangit tingnan habang wala pang image */
-.card-image-placeholder {
-    width: 100%;
-    height: 250px;
-    background: #1a1a1a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #333;
-    font-size: 0.8rem;
+.pyrox-specs {
+    font-size: 0.7rem;
+    color: var(--accent-gold);
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    border-top: 1px solid var(--glass-border);
+    padding-top: 15px;
 }
-    
+
+/* Price Tag */
+.pyrox-price-tag {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* Button style sync */
+.btn-pyrox {
+    display: inline-block;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 5px;
+    align-self: flex-start;
+    transition: 0.3s;
+}
+
+.btn-pyrox:hover {
+    border-bottom: 1px solid #fff;
+    letter-spacing: 3px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .inventory-grid-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
 
