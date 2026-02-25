@@ -529,4 +529,93 @@ footer {
     .benefits-grid {
         grid-template-columns: 1fr !important;
     }
-    }
+
+/* --- SUB-PAGE HEADER ADJUSTMENT --- */
+/* Dahil fixed ang header, kailangan ng top padding ang main content */
+main {
+    padding-top: 100px;
+}
+
+/* --- INVENTORY PAGE SPECIFIC --- */
+.inventory-header {
+    text-align: center;
+    padding: 80px 5% 40px;
+}
+
+.inventory-header h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+/* Ginagamit nito ang existing mong .grid-3-cols at .card class */
+.inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    padding: 40px 0;
+}
+
+.car-specs {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: var(--accent-gold);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.car-price {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: auto;
+    color: #fff;
+}
+
+/* --- ABOUT PAGE RE-STYLING --- */
+.about-hero {
+    text-align: center;
+    padding: 100px 10%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-hero h1 {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    color: var(--accent-gold);
+}
+
+.about-hero p {
+    font-size: 1.1rem;
+    line-height: 2;
+    color: #a0a0a0;
+    font-weight: 200;
+}
+
+/* Override para sa About benefits section para maging consistent */
+.about-benefits {
+    background: linear-gradient(to bottom, #0a0a0a, #111);
+    padding: 100px 5%;
+}
+
+/* --- BROKEN IMAGE FIX --- */
+/* Para hindi pangit tingnan habang wala pang image */
+.card-image-placeholder {
+    width: 100%;
+    height: 250px;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+    
+
