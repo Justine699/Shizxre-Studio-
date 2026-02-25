@@ -649,5 +649,21 @@ footer {
     .inventory-grid-wrapper {
         grid-template-columns: 1fr;
     }
+/* Siguraduhin na ang container ay sapat ang laki para sa grid */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
 }
+
+/* Force fix para sa About Section spacing */
+.section-dark {
+    padding: 120px 5% !important;
+}
+
+/* Siguraduhin na ang icons ay kulay Gold */
+.benefit-card .card-icon {
+    color: var(--accent-gold) !important;
+    display: block;
+}
+
 
