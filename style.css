@@ -649,21 +649,52 @@ footer {
     .inventory-grid-wrapper {
         grid-template-columns: 1fr;
     }
-/* Siguraduhin na ang container ay sapat ang laki para sa grid */
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
+}
+    /* --- ABOUT PAGE SPECIFIC REFINEMENTS --- */
+
+/* Luxury Title for About Section */
+.archive-title.center {
+    text-align: center;
+    margin-top: 50px;
+    letter-spacing: 10px;
 }
 
-/* Force fix para sa About Section spacing */
-.section-dark {
-    padding: 120px 5% !important;
-}
-
-/* Siguraduhin na ang icons ay kulay Gold */
+/* Re-styling the Icons/Emojis */
 .benefit-card .card-icon {
-    color: var(--accent-gold) !important;
+    font-size: 3rem;
+    margin-bottom: 25px;
     display: block;
+    filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.3)); /* Subtle Gold Glow */
+}
+
+/* Hover Effect Enhancement */
+.benefit-card:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: var(--accent-gold) !important;
+    transform: translateY(-15px);
+}
+
+/* About Text Content */
+.about-description {
+    max-width: 800px;
+    margin: 0 auto 80px;
+    text-align: center;
+    color: #a0a0a0;
+    font-weight: 200;
+    line-height: 2;
+    font-size: 1.1rem;
+}
+
+/* Responsive adjustment para sa small screens */
+@media (max-width: 768px) {
+    .section-dark {
+        padding: 80px 5% !important;
+    }
+    
+    .archive-title {
+        font-size: 1.8rem;
+        letter-spacing: 5px;
+    }
 }
 
 
